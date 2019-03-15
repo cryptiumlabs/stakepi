@@ -26,10 +26,10 @@ font = ImageFont.load_default()
 
 def autoformat(value):
     if value > 1e6:
-        return str(round(value / 1e6, 1)) + 'm'
+        return str(round(value / 1e6, 2)) + 'm'
     if value > 1e3:
-        return str(round(value / 1e3, 1)) + 'k'
-    return round(value, 1)
+        return str(round(value / 1e3, 2)) + 'k'
+    return round(value, 2)
 
 def fetch_temperature():
     return util.readBME280All()[0]
@@ -50,6 +50,7 @@ def get_cosmos_stake():
     return staking_balance
 
 def display(lines):
+    print('Displaying {}'.format(lines))
     draw.rectangle((0, 0, width, height), outline = 0, fill = 0)
     x = 2
     for line in lines:
@@ -60,26 +61,32 @@ def display(lines):
 
 def update_loop():
     stakes = [
-        ('tezos', get_tezos_stake()),
-        ('irisnet', get_irisnet_stake()),
-        ('cosmos', get_cosmos_stake())
+        ('XTZ', get_tezos_stake()),
+        ('IRIS', get_irisnet_stake()),
+        ('ATOM', get_cosmos_stake())
     ]
     prices = {
-        'tezos': fetch_cmc_price('tezos'),
-        'irisnet': 0,
-        'cosmos': fetch_cmc_price('cosmos')
+        'XTZ': fetch_cmc_price('tezos'),
+        'IRIS': 0,
+        'ATOM': fetch_cmc_price('cosmos')
     }
     total_staked = sum(x[1] * prices[x[0]] for x in stakes)
     return (stakes, prices, total_staked)
 
 while 1:
     (stakes, prices, total_staked) = update_loop()
+    for stake in stakes:
+        lines = [
+            '{}'.format(autoformat(stake[1])),
+            '{}'.format(stake[0]),
+            'STAKED'
+        ]
+        display(lines)    
+        time.sleep(2.0)
     lines = [
-        '{} TZ'.format(autoformat(stakes[0][1])),
-        '{} IR'.format(autoformat(stakes[1][1])),
-        '{} AT'.format(autoformat(stakes[2][1])),
-        '${} NET'.format(autoformat(total_staked))
+        '${}'.format(autoformat(total_staked)),
+        'TOTAL',
+        'STAKED'
     ]
     display(lines)
-    print(lines)
-    time.sleep(0.1)
+    time.sleep(2.0)
