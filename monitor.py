@@ -69,6 +69,9 @@ def update_loop():
     total_staked = sum(x[1] * prices[x[0]] for x in stakes)
     return (stakes, prices, total_staked)
 
-print(update_loop())
-print('Temp: {}'.format(fetch_temperature()))
-display('testing')
+while 1:
+    (stakes, prices, total_staked) = update_loop()
+    temp = fetch_temperature()
+    display('{} C'.format(temp))
+    print('{} C'.format(temp))
+    time.sleep(0.1)
