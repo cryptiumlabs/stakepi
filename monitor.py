@@ -79,8 +79,7 @@ while 1:
         '{} XTZ'.format(autoformat(stakes[0][1])),
         '{} IRIS'.format(autoformat(stakes[1][1])),
         '{} ATOM'.format(autoformat(stakes[2][1])),
-        'AT STAKE:',
-        '${}'.format(autoformat(total_staked))
+        '${} NET'.format(autoformat(total_staked))
     ]
     display(lines)
     print(lines)
