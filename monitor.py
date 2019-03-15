@@ -3,10 +3,9 @@
 import math
 import requests
 import yaml
+import util
 
 config = yaml.load(open('config.yaml'), Loader = yaml.CLoader)
-
-print(config)
 
 def autoformat(value):
     if value > 1e6:
@@ -45,3 +44,4 @@ def update_loop():
     return (stakes, prices, total_staked)
 
 print(update_loop())
+util.main()
