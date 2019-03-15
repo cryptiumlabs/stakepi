@@ -25,11 +25,13 @@ draw.rectangle((0, 0, width, height), outline = 0, fill = 0)
 font = ImageFont.load_default()
 
 def autoformat(value):
+    if value > 1e9:
+        return str(round(value / 1e9, 2)) + 'b'
     if value > 1e6:
-        return str(round(value / 1e6, 3)) + 'm'
+        return str(round(value / 1e6, 2)) + 'm'
     if value > 1e3:
-        return str(round(value / 1e3, 3)) + 'k'
-    return round(value, 3)
+        return str(round(value / 1e3, 2)) + 'k'
+    return round(value, 2)
 
 def fetch_temperature():
     return util.readBME280All()[0]
