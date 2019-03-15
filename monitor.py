@@ -26,10 +26,10 @@ font = ImageFont.load_default()
 
 def autoformat(value):
     if value > 1e6:
-        return str(round(value / 1e6, 2)) + 'm'
+        return str(round(value / 1e6, 3)) + 'm'
     if value > 1e3:
-        return str(round(value / 1e3, 2)) + 'k'
-    return round(value, 2)
+        return str(round(value / 1e3, 3)) + 'k'
+    return round(value, 3)
 
 def fetch_temperature():
     return util.readBME280All()[0]
@@ -54,7 +54,7 @@ def display(lines):
     draw.rectangle((0, 0, width, height), outline = 0, fill = 0)
     x = 2
     for line in lines:
-        draw.text((35, x), str(line), font = font, fill = 255)
+        draw.text((40, x), str(line), font = font, fill = 255)
         x += 8
     disp.image(image)
     disp.display()
