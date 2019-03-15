@@ -51,7 +51,7 @@ def get_cosmos_stake():
 
 def display(lines):
     draw.rectangle((0, 0, width, height), outline = 0, fill = 0)
-    x = 5
+    x = 2
     for line in lines:
         draw.text((35, x), str(line), font = font, fill = 255)
         x += 8
@@ -74,11 +74,10 @@ def update_loop():
 
 while 1:
     (stakes, prices, total_staked) = update_loop()
-    temp = fetch_temperature()
     lines = [
-        '{} XTZ'.format(autoformat(stakes[0][1])),
-        '{} IRIS'.format(autoformat(stakes[1][1])),
-        '{} ATOM'.format(autoformat(stakes[2][1])),
+        '{} TZ'.format(autoformat(stakes[0][1])),
+        '{} IR'.format(autoformat(stakes[1][1])),
+        '{} AT'.format(autoformat(stakes[2][1])),
         '${} NET'.format(autoformat(total_staked))
     ]
     display(lines)
