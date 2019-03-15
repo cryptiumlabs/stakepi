@@ -26,10 +26,10 @@ font = ImageFont.load_default()
 
 def autoformat(value):
     if value > 1e6:
-        return str(round(value / 1e6, 2)) + 'm'
+        return str(round(value / 1e6, 1)) + 'm'
     if value > 1e3:
-        return str(round(value / 1e3, 2)) + 'k'
-    return round(value, 2)
+        return str(round(value / 1e3, 1)) + 'k'
+    return round(value, 1)
 
 def fetch_temperature():
     return util.readBME280All()[0]
@@ -79,7 +79,8 @@ while 1:
         '{} XTZ'.format(autoformat(stakes[0][1])),
         '{} IRIS'.format(autoformat(stakes[1][1])),
         '{} ATOM'.format(autoformat(stakes[2][1])),
-        '{} C'.format(temp)
+        'AT STAKE:',
+        '${}'.format(autoformat(total_staked))
     ]
     display(lines)
     print(lines)
