@@ -9,7 +9,6 @@ Can easily be varied.
 - [Raspberry Pi 3 B+](https://www.sparkfun.com/products/14643)
 - [Qwiic Hat](https://www.sparkfun.com/products/14459)
 - [BME280](https://www.sparkfun.com/products/14348) (optional)
-- [Qwiic LED Stick](https://www.sparkfun.com/products/14783) (optional)
 - [Qwiic Micro OLED](https://www.sparkfun.com/products/14532)
 
 #### Setup
@@ -31,6 +30,7 @@ addresses:
   cosmos: cosmosvaloper1kj0h4kn4z5xvedu2nd9c4a9a559wvpuvu0h6qn
 display:
   period: 2
+  temperature: true
 ```
 
 #### Usage

@@ -4,3 +4,4 @@ addresses:
   cosmos: cosmosvaloper1kj0h4kn4z5xvedu2nd9c4a9a559wvpuvu0h6qn
 display:
   period: 2
+  temperature: true

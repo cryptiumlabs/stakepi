@@ -3,7 +3,6 @@
 import math
 import requests
 import yaml
-import util
 import time
 import Adafruit_GPIO.SPI as SPI
 import Adafruit_SSD1306
@@ -12,6 +11,9 @@ from PIL import ImageDraw
 from PIL import ImageFont
 
 config = yaml.load(open('config.yaml'))
+
+if config['display']['temperature']:
+    import util
 
 disp = Adafruit_SSD1306.SSD1306_64_48(rst = None, i2c_address = 0x3d)
 disp.clear()
@@ -93,9 +95,10 @@ while 1:
     ]
     display(lines)
     time.sleep(config['display']['period'])
-    lines = [
-        'TEMP',
-        '{} C'.format(temperature)
-    ]
-    display(lines)
-    time.sleep(config['display']['period'])
+    if config['display']['temperature']:
+        lines = [
+            'TEMP',
+            '{} C'.format(temperature)
+        ]
+        display(lines)
+        time.sleep(config['display']['period'])
