@@ -1,6 +1,6 @@
 ### StakePi
 
-Monitoring staking status with a Raspberry Pi.
+Monitoring staking status with a Raspberry Pi. Also conveniently displays the current temperature.
 
 #### Hardware
 
@@ -8,9 +8,9 @@ Can easily be varied.
 
 - [Raspberry Pi 3 B+](https://www.sparkfun.com/products/14643)
 - [Qwiic Hat](https://www.sparkfun.com/products/14459)
-- [BME280](https://www.sparkfun.com/products/14348)
-- [Qwiic LED Stick](https://www.sparkfun.com/products/14783)
-- [Micro OLED](https://www.sparkfun.com/products/14532)
+- [BME280](https://www.sparkfun.com/products/14348) (optional)
+- [Qwiic LED Stick](https://www.sparkfun.com/products/14783) (optional)
+- [Qwiic Micro OLED](https://www.sparkfun.com/products/14532)
 
 #### Setup
 
@@ -41,4 +41,4 @@ display:
 
 The I2C connections are occasionally finicky.
 
-If you plan to run this headlessly an automatically restarting systemd service is recommended.
+If you plan to run this headlessly a systemd service is recommended. See [stakepi.service](stakepi.service) for an example.

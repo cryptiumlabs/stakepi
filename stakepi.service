@@ -1,0 +1,15 @@
+[Unit]
+Description=StakePi
+After=network.target
+StartLimitInterval=0
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/stakepi
+ExecStart=/usr/bin/python2 /home/pi/stakepi/monitor.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
