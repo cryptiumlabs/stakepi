@@ -77,6 +77,7 @@ def update_loop():
 
 while 1:
     (stakes, prices, total_staked) = update_loop()
+    temperature, _, _ = util.readBME280All()
     for stake in stakes:
         lines = [
             '{}'.format(autoformat(stake[1])),
@@ -84,11 +85,17 @@ while 1:
             'STAKED'
         ]
         display(lines)    
-        time.sleep(2.0)
+        time.sleep(config['display']['period'])
     lines = [
         '${}'.format(autoformat(total_staked)),
         'TOTAL',
         'STAKED'
     ]
     display(lines)
-    time.sleep(2.0)
+    time.sleep(config['display']['period'])
+    lines = [
+        'TEMP',
+        '{} C'.format(temperature)
+    ]
+    display(lines)
+    time.sleep(config['display']['period'])

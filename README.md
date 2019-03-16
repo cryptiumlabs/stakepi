@@ -1,6 +1,6 @@
 ### StakePi
 
-Monitoring staking status with a Raspberry Pi
+Monitoring staking status with a Raspberry Pi.
 
 #### Hardware
 
@@ -14,14 +14,31 @@ Can easily be varied.
 
 #### Setup
 
+[Python 2.7](https://www.python.org/) required.
+
 ```
 pip2 install -r requirements.txt
 ```
 
-And install [this fork](https://github.com/cwgoes/Adafruit_Python_SSD1306) of the SSD1306 library.
+#### Configuration
+
+Update [config.yaml](config.yaml) with your validator information, e.g.:
+
+```yaml
+addresses:
+  tezos: tz1eEnQhbwf6trb8Q8mPb2RaPkNk2rN7BKi8
+  irisnet: iva1f3lapzxe7ugfex8358ufp5k8xg2yym5tpp2xje
+  cosmos: cosmosvaloper1kj0h4kn4z5xvedu2nd9c4a9a559wvpuvu0h6qn
+display:
+  period: 2
+```
 
 #### Usage
 
 ```bash
 ./monitor.py
 ```
+
+The I2C connections are occasionally finicky.
+
+If you plan to run this headlessly an automatically restarting systemd service is recommended.

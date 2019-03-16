@@ -1,2 +1,3 @@
 pyyaml
 requests
+git+https://github.com/cwgoes/Adafruit_Python_SSD1306@master#egg=Adafruit-SSD1306
