@@ -6,11 +6,11 @@ Monitoring staking status with a Raspberry Pi
 
 Can easily be varied.
 
-- [Raspberry Pi 3 B+]()
-- [Qwiic Hat]()
-- [BME280]()
-- [Qwiic LED Stick]()
-- [Micro OLED]()
+- [Raspberry Pi 3 B+](https://www.sparkfun.com/products/14643)
+- [Qwiic Hat](https://www.sparkfun.com/products/14459)
+- [BME280](https://www.sparkfun.com/products/14348)
+- [Qwiic LED Stick](https://www.sparkfun.com/products/14783)
+- [Micro OLED](https://www.sparkfun.com/products/14532)
 
 #### Setup
 
