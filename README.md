@@ -2,6 +2,10 @@
 
 Monitoring staking status with a Raspberry Pi. Also conveniently displays the current temperature.
 
+![StakePi](https://media.giphy.com/media/35SgSf6FclFSUJO13Q/giphy.gif)
+
+Try not to become too addicted.
+
 #### Hardware
 
 Can easily be varied.
