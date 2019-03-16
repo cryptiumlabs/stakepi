@@ -2,7 +2,7 @@
 
 Monitoring staking status with a Raspberry Pi. Also conveniently displays the current temperature.
 
-![StakePi](https://media.giphy.com/media/35SgSf6FclFSUJO13Q/giphy.gif)
+![StakePi](https://github.com/cryptiumlabs/stakepi/raw/master/stakepi.gif)
 
 Try not to become too addicted.
 
